@@ -31,6 +31,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import neu.vishald.connecteddevices.labs.module01.SystemCpuUtilTask;
+
 
 /**
  * Provides a simple mechanism for passing {@link Runnable}
@@ -132,12 +134,12 @@ public class DevicePollingManager
 			
 			try {
 				if (futureTask.cancel(true)) {
-					_Logger.info(taskName + " successfully cancelled.");
+					getLogger().info(taskName + " successfully cancelled.");
 				} else {
-					_Logger.warning(taskName + " already cancelled or can't be cancelled.");
+					getLogger().warning(taskName + " already cancelled or can't be cancelled.");
 				}
 			} catch (Exception e) {
-				_Logger.log(Level.SEVERE, "Failed in temporarily stop scheduled polling task: " + taskName, e);
+				getLogger().log(Level.SEVERE, "Failed in temporarily stop scheduled polling task: " + taskName, e);
 			}
 		}
 	}
@@ -154,7 +156,7 @@ public class DevicePollingManager
 			
 			_scheduler.shutdownNow();
 		} catch (Exception e) {
-			_Logger.log(Level.SEVERE, "Failed in orderly shutdown of scheduled tasks.", e);
+			getLogger().log(Level.SEVERE, "Failed in orderly shutdown of scheduled tasks.", e);
 		}
 	}
 	
@@ -170,6 +172,12 @@ public class DevicePollingManager
 	{
 		_scheduler      = Executors.newScheduledThreadPool(_threadPoolSize);
 		_futureTaskList = new ArrayList<ScheduledFuture<?>>();
+	}
+
+	
+
+	public static Logger getLogger() {
+		return _Logger;
 	}
 	
 }

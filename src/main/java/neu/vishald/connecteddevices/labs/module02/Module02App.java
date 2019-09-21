@@ -1,7 +1,7 @@
 /**
  * 
  */
-package schooldomain.studentname.connecteddevices.labs.module05;
+package neu.vishald.connecteddevices.labs.module02;
 
 import java.util.logging.Logger;
 
@@ -11,19 +11,19 @@ import com.labbenchstudios.edu.connecteddevices.common.DeviceApplicationExceptio
 /**
  *
  */
-public class Module05App extends BaseDeviceApp
+public class Module02App extends BaseDeviceApp
 {
 	// static
 	
 	private static final Logger _Logger =
-		Logger.getLogger(Module05App.class.getSimpleName());
+		Logger.getLogger(Module02App.class.getSimpleName());
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args)
 	{
-		Module05App app = new Module05App(Module05App.class.getSimpleName(), args);
+		Module02App app = new Module02App(Module02App.class.getSimpleName(), args);
 		app.startApp();
 	}
 	
@@ -36,7 +36,7 @@ public class Module05App extends BaseDeviceApp
 	 * Default.
 	 * 
 	 */
-	public Module05App()
+	public Module02App()
 	{
 		super();
 	}
@@ -46,7 +46,7 @@ public class Module05App extends BaseDeviceApp
 	 * 
 	 * @param appName
 	 */
-	public Module05App(String appName)
+	public Module02App(String appName)
 	{
 		super(appName);
 	}
@@ -57,7 +57,7 @@ public class Module05App extends BaseDeviceApp
 	 * @param appName
 	 * @param args
 	 */
-	public Module05App(String appName, String[] args)
+	public Module02App(String appName, String[] args)
 	{
 		super(appName, args);
 	}
@@ -70,7 +70,7 @@ public class Module05App extends BaseDeviceApp
 	@Override
 	protected void start() throws DeviceApplicationException
 	{
-		_Logger.info("Hello - module05 here!");
+		_Logger.info("Hello - module02 here!");
 		
 	}
 	
@@ -80,7 +80,7 @@ public class Module05App extends BaseDeviceApp
 	@Override
 	protected void stop() throws DeviceApplicationException
 	{
-		_Logger.info("Stopping module05 app...");
+		_Logger.info("Stopping module02 app...");
 	}
 	
 }
