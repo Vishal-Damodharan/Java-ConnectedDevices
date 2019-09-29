@@ -18,27 +18,24 @@ import com.labbenchstudios.edu.connecteddevices.common.ConfigUtil;
 public class SmtpClientConnector1 {
 
 	/*
-	 * This function is to initialize the props file in ConfigUtil and make it get the 
-    	value of host, port, email address and password.
+	 * This function is to initialize the props file in ConfigUtil and make it get
+	 * the value of host, port, email address and password.
 	 */
 	public static void sendMail(String recipient, String data) throws Exception {
 		System.out.println("Preparing to send email .. ");
+		ConfigUtil.getInstance().loadConfig();
 		Properties properties = new Properties();
-//		properties.put("mail.smtp.auth"	,"true");
 		properties.put(ConfigConst.SMTP_PROP_AUTH_KEY, "true");
-
-//		properties.put("mail.smtp.starttls.enable","true");
 		properties.put(ConfigConst.SMTP_PROP_ENABLE_TLS_KEY, "true");
+		properties.put(ConfigConst.SMTP_PROP_HOST_KEY,
+				ConfigUtil.getInstance().getProperty(ConfigConst.SMTP_CLOUD_SECTION, ConfigConst.HOST_KEY));
+		properties.put(ConfigConst.SMTP_PROP_PORT_KEY,
+				ConfigUtil.getInstance().getProperty(ConfigConst.SMTP_CLOUD_SECTION, ConfigConst.PORT_KEY));
 
-//		properties.put("mail.smtp.host"	,"smtp.gmail.com");
-		properties.put(ConfigConst.SMTP_PROP_HOST_KEY, "smtp.gmail.com");
-//		properties.put("mail.smtp.port"	,"587");
-		properties.put(ConfigConst.SMTP_PROP_PORT_KEY, "587");
-//		System.out.println(ConfigConst.PORT_KEY);
-//		System.out.println(ConfigUtil.getInstance().hasProperty(ConfigConst.SMTP_CLOUD_SECTION, ConfigConst.PORT_KEY));
-//		System.out.println(ConfigConst.DEFAULT_CONFIG_FILE_NAME);
-		final String myAccountEmail = "vishalcd.iot@gmail.com";
-		final String password = "xqxbufjgccutoaam";
+		final String myAccountEmail = ConfigUtil.getInstance().getProperty(ConfigConst.SMTP_CLOUD_SECTION,
+				ConfigConst.FROM_ADDRESS_KEY);
+		final String password = ConfigUtil.getInstance().getProperty(ConfigConst.SMTP_CLOUD_SECTION,
+				ConfigConst.USER_AUTH_TOKEN_KEY);
 
 		Session session = Session.getInstance(properties, new Authenticator() {
 			@Override
@@ -54,6 +51,9 @@ public class SmtpClientConnector1 {
 
 	}
 
+	/*
+	 * The prepareMessage function is used to send the sensor data into the email using SMTP
+	 */
 	private static Message prepareMessage(Session session, String myAccountEmail, String recipient, String data) {
 		Message message = new MimeMessage(session);
 		try {

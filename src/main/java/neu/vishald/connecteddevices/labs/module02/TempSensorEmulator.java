@@ -38,14 +38,17 @@ public class TempSensorEmulator extends Thread {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				try {
-					Thread.sleep(1);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 			}
-
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			/*
+			 * This sleep function is used for the delay in between each iteration 
+			 */
 		}
 
 	}
