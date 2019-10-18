@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import com.labbenchstudios.edu.connecteddevices.common.BaseDeviceApp;
 import com.labbenchstudios.edu.connecteddevices.common.DeviceApplicationException;
 
-public class TempSimulatorApp extends BaseDeviceApp {
+public class TempSimulatorApp extends BaseDeviceApp{
 	// static
 
 	private static final Logger _Logger = Logger.getLogger(TempSimulatorApp.class.getSimpleName());

@@ -9,7 +9,6 @@ public class DataUtil {
 	/*
 	 * This method will accept a SensorData object and convert it and then return
 	 * its contents as a JSON string
-	 *
 	 */
 	public String SensorDataToJson(SensorData sensordata) {
 		String jsonSd;

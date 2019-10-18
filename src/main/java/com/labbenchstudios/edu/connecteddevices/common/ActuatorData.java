@@ -110,7 +110,7 @@ public class ActuatorData {
 		this.val = data.getVal();
 	}
 	/*
-	 *to return the temp values
+	 * to return the temp values
 	 */
 	
 	public String toString() {

@@ -93,7 +93,7 @@ public class SensorData implements Serializable {
 		}
 	}
 	/*
-	 *to return the temp values
+	 * to return the temp values
 	 */
 	@Override
 	public String toString() {
