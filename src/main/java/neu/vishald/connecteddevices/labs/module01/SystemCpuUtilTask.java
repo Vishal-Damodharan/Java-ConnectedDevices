@@ -33,4 +33,8 @@ public class SystemCpuUtilTask implements Runnable {
 		// What % load the overall system is at, from 0.0-1.0
 		System.out.println(osBean.getSystemCpuLoad());
 	}
+	
+	public float getCPU() {
+		return 101;
+	}
 }

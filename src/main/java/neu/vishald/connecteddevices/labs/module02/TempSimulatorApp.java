@@ -80,3 +80,61 @@ public class TempSimulatorApp extends BaseDeviceApp {
 	}
 
 }
+/*
+ * 
+ * 
+Using Polling 
+ 
+package neu.vishald.connecteddevices.labs.module02;
+
+import java.util.logging.Logger;
+
+import com.labbenchstudios.edu.connecteddevices.common.BaseDeviceApp;
+import com.labbenchstudios.edu.connecteddevices.common.DeviceApplicationException;
+
+import neu.vishald.connecteddevices.labs.module01.SystemPerformanceAdaptor;
+
+
+public class TempSimulatorApp extends BaseDeviceApp {
+	// static
+
+	private static final Logger _Logger = Logger.getLogger(TempSimulatorApp.class.getSimpleName());
+
+	
+	  The main function calls the object instance of the TempSimulatorApp
+	 
+	public static void main(String[] args) {
+		TempSimulatorApp app = new TempSimulatorApp();
+		app.startApp();
+
+	}
+	
+	private TempEmulatorAdaptor _sysPerfAdaptor;
+	
+	public TempSimulatorApp() {
+		super();
+		this._sysPerfAdaptor = new TempEmulatorAdaptor(10);
+	}
+
+	public TempSimulatorApp(String appName) {
+		super(appName);
+	}
+	
+	
+
+	@Override
+	protected void start() throws DeviceApplicationException {
+
+		this._sysPerfAdaptor.startPolling();
+
+	}
+
+	@Override
+	protected void stop() throws DeviceApplicationException {
+		this._sysPerfAdaptor.stopPolling();
+	}
+
+}
+
+ */
+

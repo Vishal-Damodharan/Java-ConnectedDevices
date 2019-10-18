@@ -19,7 +19,7 @@ import com.labbenchstudios.edu.connecteddevices.common.SensorData;
  * 2) Add the '@Test' annotation to each new 'test...()' method you add.
  * 3) Import the relevant modules and classes to support your tests.
  * 4) Run this class as unit test app
- * 5) Include a screen shot of the report when you submit your assignmen
+ * 5) Include a screen shot of the report when you submit your assignment
  */
 public class Module05Test
 {

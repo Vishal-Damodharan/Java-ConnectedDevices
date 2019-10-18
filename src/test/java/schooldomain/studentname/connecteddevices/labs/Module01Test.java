@@ -9,6 +9,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import neu.vishald.connecteddevices.labs.module01.SystemCpuUtilTask;
+
 /**
  * Test class for all requisite Module01 functionality.
  * 
@@ -38,9 +40,19 @@ public class Module01Test
 	}
 	
 	@Test
-	public void testSomething()
+	public void testCPU()
 	{
-//		fail("Not yet implemented");
+		SystemCpuUtilTask myobj = new SystemCpuUtilTask();
+		assertTrue(myobj.getCPU() >= 0.0);
+		assertTrue(myobj.getCPU() <= 100.0);
+	}
+	
+	@Test
+	public void testMem()
+	{
+		SystemCpuUtilTask myobj = new SystemCpuUtilTask();
+		assertTrue(myobj.getCPU() >= 0.0);
+		assertTrue(myobj.getCPU() <= 100.0);
 	}
 	
 }
