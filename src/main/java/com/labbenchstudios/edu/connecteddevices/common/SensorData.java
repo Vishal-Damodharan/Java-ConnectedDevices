@@ -92,7 +92,9 @@ public class SensorData implements Serializable {
 			this.avgValue = this.totValue / this.sampleCount;
 		}
 	}
-
+	/*
+	 * to return the temp values
+	 */
 	@Override
 	public String toString() {
 		return "Temperature:"+"\n\tTime:"+ updateTimeStamp() +"\n\tCurrent:" + curValue + "\n\tAverage:" + avgValue + "\n\tSample:" + sampleCount+ "\n\tMin:" + minValue + "\n\tMax:"

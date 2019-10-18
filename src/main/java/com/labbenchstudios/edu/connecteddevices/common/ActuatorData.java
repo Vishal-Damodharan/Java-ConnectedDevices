@@ -109,7 +109,10 @@ public class ActuatorData {
 		this.stateData = data.getStateData();
 		this.val = data.getVal();
 	}
-
+	/*
+	 * to return the temp values
+	 */
+	
 	public String toString() {
 		String st;
 		st = ("Name: " + name + "\n" + "time: " + timeStamp + "\n" + "Command: " + command + "\n" + "Status Code: "

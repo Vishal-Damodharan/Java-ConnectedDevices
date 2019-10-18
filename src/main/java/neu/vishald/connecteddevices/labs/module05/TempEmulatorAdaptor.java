@@ -15,7 +15,7 @@ public class TempEmulatorAdaptor {
 		SensorData sensor_variable = sensor.JsonToSensorData(null,
 				"C:\\Users\\VISHAL\\git\\connected-devices-python\\workspace\\iot-device\\apps\\labs\\module05\\sensordata.txt");
 		System.out.println(sensor_variable);
-		System.out.println("-------------------------------------------------");
+		System.out.println("------------------------------------------------");
 		System.out.println("\nTemperature Reading Values from the Sense_hat:");
 		TempEmulatorAdaptorTask temp = new TempEmulatorAdaptorTask();
 		temp.run();

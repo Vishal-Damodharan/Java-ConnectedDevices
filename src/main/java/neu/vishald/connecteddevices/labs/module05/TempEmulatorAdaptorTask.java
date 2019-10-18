@@ -17,7 +17,7 @@ public class TempEmulatorAdaptorTask extends Thread {
 	}
 
 	/*
-	 * The run() function runs a while loop to send the json data to the given email
+	 * The run function runs a while loop to send the json data to the given email
 	 * if the temperature value breaches the threshold value.
 	 */
 	@Override
