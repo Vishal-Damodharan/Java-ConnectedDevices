@@ -39,9 +39,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-		    <groupId>org.hyperic</groupId>
-		    <artifactId>sigar</artifactId>
-		    <version>1.6.4</version>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.6.2</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-configuration</groupId>
@@ -98,19 +98,19 @@
 							<archive>
 								<manifest>
 									<addClasspath>true</addClasspath>
-									<mainClass>neu.mdv.connecteddevices.labs.module01.Module01App</mainClass>
+									<mainClass>neu.mdv.connecteddevices.labs.module02.TempSimulatorApp</mainClass>
 									<classpathPrefix>dep-libs/</classpathPrefix>
 								</manifest>
 							</archive>
 							<descriptorRefs>
 								<descriptorRef>jar-with-dependencies</descriptorRef>
 							</descriptorRefs>
-							<finalName>${project.artifactId}-module01-${project.version}</finalName>
+							<finalName>${project.artifactId}-module02-${project.version}</finalName>
 						</configuration>
 					</execution>
-					<!-- <execution> <id>module01</id> <phase>package</phase> <goals> <goal>assembly</goal> 
+					<!-- <execution> <id>module02</id> <phase>package</phase> <goals> <goal>assembly</goal> 
 						</goals> <configuration> <archive> <manifest> <addClasspath>true</addClasspath> 
-						<mainClass>neu.vishald.connecteddevices.labs.module01.Module01App</mainClass> 
+						<mainClass>neu.vishald.connecteddevices.labs.module02.TempSimulatorApp</mainClass> 
 						<classpathPrefix>dep-libs/</classpathPrefix> </manifest> </archive> <descriptorRefs> 
 						<descriptorRef>jar-with-dependencies</descriptorRef> </descriptorRefs> <finalName>${project.artifactId}-module06-${project.version}</finalName> 
 						</configuration> </execution> <execution> <id>module07</id> <phase>package</phase> 
