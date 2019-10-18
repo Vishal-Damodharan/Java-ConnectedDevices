@@ -32,7 +32,7 @@ public class ConfigConst
 {
 	public static final String SECTION_SEPARATOR        = ".";
 	public static final String DATA_PATH                = "/home/pi/Applications/data/";
-	public static final String DEFAULT_CONFIG_FILE_NAME = "C:\\Users\\VISHAL\\git\\connected-devices-java4\\src\\main\\java\\com\\labbenchstudios\\edu\\connecteddevices\\common\\ConnectedDevicesConfig.props";
+	public static final String DEFAULT_CONFIG_FILE_NAME = "C:\\Users\\VISHAL\\git\\connected-devices-java4\\config\\ConnectedDevicesConfig.props";
 
 	public static final String DEFAULT_COAP_PROTOCOL  = "coap";
 	public static final String SECURE_COAP_PROTOCOL   = "coaps";

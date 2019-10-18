@@ -9,6 +9,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.labbenchstudios.edu.connecteddevices.common.SensorData;
+
 /**
  * Test class for all requisite Module05 functionality.
  * 
@@ -40,7 +42,9 @@ public class Module05Test
 	@Test
 	public void testSomething()
 	{
-//		fail("Not yet implemented");
+		SensorData data = new SensorData(0, 30);
+		assertTrue(data.getSD() >= 0.0);
+		assertTrue(data.getSD() <= 30.0);
 	}
 	
 }

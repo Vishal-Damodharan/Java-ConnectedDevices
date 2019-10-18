@@ -14,29 +14,18 @@ public class SensorData implements Serializable {
 	private float totValue = 0.0f;
 	private int sampleCount = 0;
 	Instant timestamp;
+	final 	String degree = "\u00b0";
+
 
 	public SensorData(float min, float max) {
 		this.minValue = min;
 		this.maxValue = max;
 	}
 	
-	
-//	public Instant getTimestamp() {
-//		return java.time.Clock.systemUTC().instant();
-//	}
-//	
-//	public void updateTimestamp() {
-//		this.timestamp = java.time.Clock.systemUTC().instant();
-//	}
-//
-//	public void setTimestamp(Instant timestamp) {
-//		this.timestamp = timestamp;
-//	}
 
 	public String updateTimeStamp() {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
-//		System.out.println(dateFormat.format(date)); //2016/11/16 12:08:43
 		return dateFormat.format(date);
 	}
 	
@@ -106,7 +95,6 @@ public class SensorData implements Serializable {
 
 	@Override
 	public String toString() {
-//		String str = ""
 		return "Temperature:"+"\n\tTime:"+ updateTimeStamp() +"\n\tCurrent:" + curValue + "\n\tAverage:" + avgValue + "\n\tSample:" + sampleCount+ "\n\tMin:" + minValue + "\n\tMax:"
 				+ maxValue + "\n\ttotValue=" + totValue +"\n" ;
 	}
