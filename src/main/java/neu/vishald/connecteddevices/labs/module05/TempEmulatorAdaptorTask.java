@@ -28,7 +28,7 @@ public class TempEmulatorAdaptorTask extends Thread {
 			System.out.println(this.sensor.toString());
 			if (current > (this.sensor.getAvgValue() + 5)) {
 				DataUtil data = new DataUtil();
-				String json_data = data.SensorDataToJson(sensor);
+				String json_data = data.toJsonFromSensorData(sensor);
 				System.out.println(
 						"Warning!Warning!Warning! Temperature has breached!! \n\nCurrent Temp: " + json_data + "\n");
 				try {

@@ -10,7 +10,7 @@ public class DataUtil {
 	 * This method will accept a SensorData object and convert it and then return
 	 * its contents as a JSON string
 	 */
-	public String SensorDataToJson(SensorData sensordata) {
+	public String toJsonFromSensorData(SensorData sensordata) {
 		String jsonSd;
 		Gson gson = new Gson();
 		jsonSd = gson.toJson(sensordata);
@@ -21,7 +21,7 @@ public class DataUtil {
 	 * This method will accept a ActuatorData object as a parameter, convert and
 	 * then return its contents as a JSON string
 	 */
-	public String ActuatorDataToJson(ActuatorData actuatordata) {
+	public String toJsonFromActuatorData(ActuatorData actuatordata) {
 		String jsonAd;
 		Gson gson = new Gson();
 		jsonAd = gson.toJson(actuatordata);
@@ -32,7 +32,7 @@ public class DataUtil {
 	 * This method will accept a JSON Data and filename object as a parameter,
 	 * convert and then return its contents as a sensor data
 	 */
-	public SensorData JsonToSensorData(String jsondata, String filename) {
+	public SensorData toSensorDataFromJson(String jsondata, String filename) {
 		SensorData sensorData = null;
 
 		if (filename == null) {
@@ -53,7 +53,7 @@ public class DataUtil {
 	 * This method will accept a JSON Data and filename object as a parameter,
 	 * convert and then return its contents as a actuator data
 	 */
-	public ActuatorData JsonToActuatorData(String jsondata, String filename) {
+	public ActuatorData toActuatorDataFromJson(String jsondata, String filename) {
 		ActuatorData actuatordata = null;
 		if (filename == null) {
 			Gson gson = new Gson();

@@ -12,7 +12,7 @@ public class TempEmulatorAdaptor {
 	 */
 	public static void demo() {
 		DataUtil sensor = new DataUtil();
-		SensorData sensor_variable = sensor.JsonToSensorData(null,
+		SensorData sensor_variable = sensor.toSensorDataFromJson(null,
 				"C:\\Users\\VISHAL\\git\\connected-devices-python\\workspace\\iot-device\\apps\\labs\\module05\\sensordata.txt");
 		System.out.println(sensor_variable);
 		System.out.println("------------------------------------------------");
