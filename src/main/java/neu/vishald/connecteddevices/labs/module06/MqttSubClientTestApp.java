@@ -30,6 +30,7 @@ public class MqttSubClientTestApp {
 		mqttClient = new MqttClientConnector();
 		mqttClient.connect();
 		mqttClient.subscribeToTopic(topicName);
+		mqttClient.unsubscribeToTopic(topicName);
 		try {
 			Thread.sleep(60000);
 		} catch (InterruptedException e) {

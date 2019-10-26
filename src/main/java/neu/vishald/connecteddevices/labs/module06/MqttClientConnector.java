@@ -106,12 +106,26 @@ public class MqttClientConnector implements MqttCallback {
 	}
 
 	/*
-	 * This function uses try catch o subscribe to a topic
+	 * This function uses try catch to subscribe to a topic
 	 */
 	public boolean subscribeToTopic(String topic) {
 		boolean success = false;
 		try {
 			mqttClient.subscribe(topic);
+			success = true;
+		} catch (MqttException e) {
+			e.printStackTrace();
+		}
+		return success;
+	}
+
+	/*
+	 * This function uses try catch to unsubscribe to a topic
+	 */
+	public boolean unsubscribeToTopic(String topic) {
+		boolean success = false;
+		try {
+			mqttClient.unsubscribe(topic);
 			success = true;
 		} catch (MqttException e) {
 			e.printStackTrace();

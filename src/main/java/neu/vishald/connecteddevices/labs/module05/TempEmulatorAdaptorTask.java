@@ -12,7 +12,7 @@ public class TempEmulatorAdaptorTask extends Thread {
 	SensorData sensor;
 
 	public TempEmulatorAdaptorTask() {
-		sensor = new SensorData(10, 30);
+		sensor =  new SensorData(30.0, 0.0, "time", "name");
 
 	}
 
@@ -24,11 +24,11 @@ public class TempEmulatorAdaptorTask extends Thread {
 	public void run() {
 		while (true) {
 			double current = getValue(this.sensor.getMinValue(), this.sensor.getMaxValue());
-			this.sensor.addValue((float) current);
+			this.sensor.updateValue((float) current);
 			System.out.println(this.sensor.toString());
 			if (current > (this.sensor.getAvgValue() + 5)) {
 				DataUtil data = new DataUtil();
-				String json_data = data.toJsonFromSensorData(sensor);
+				String json_data = data.SensorDataToJson(sensor);
 				System.out.println(
 						"Warning!Warning!Warning! Temperature has breached!! \n\nCurrent Temp: " + json_data + "\n");
 				try {
@@ -52,7 +52,7 @@ public class TempEmulatorAdaptorTask extends Thread {
 
 	}
 
-	public double getValue(float min, float max) {
+	public double getValue(double min, double max) {
 		double curr = 0;
 
 		curr = (Math.random() * ((max - min) + 1)) + min;
